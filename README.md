@@ -1,12 +1,12 @@
 # Gruntfile for Mendix theming
 
-This Gruntfile makes it easier to develop themes, because you do not have to restart the modeler to see your changes.
+This Gruntfile makes it easier to develop Mendix themes, without the use of [Scout](https://world.mendix.com/display/public/howto50/Create+a+custom+theme+with+the+Mendix+UI+Framework) or [Koala](https://world.mendix.com/display/public/howto50/Setup+Mendix+UI+Framework+with+Koala)
 
 ## Prerequisites
 
 The following things need to be installed:
-[Node.js](https://nodejs.org/en/)
-[SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass)
+* [Node.js](https://nodejs.org/en/)
+* [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass)
 
 ## Installation
 
@@ -22,8 +22,17 @@ The following things need to be installed:
 
 Currently, the Gruntfile has two options:
 
-* default, run: ```grunt```
-* dev, run: ```grunt dev```
+* **default**, run from commandline: 
+
+```bash
+grunt
+```
+
+* **dev**, run from commandline: 
+
+```bash
+grunt dev
+```
 
 The **default** Grunt task will check your theme folder (check Gruntfile.js for the location) and will:
 * copy changed .css files to your deployment folder
@@ -33,7 +42,10 @@ The **dev** Grunt task will do the same as default, but it will start your brows
 
 ## Done theming?
 
-Clean your project folder: Delete ```package.json```, ```Gruntfile.js``` and the ```node_modules``` folder
+Clean your project folder by deleting:
+* ```package.json```
+* ```Gruntfile.js```
+* ```node_modules``` folder
 
 ## License
 
