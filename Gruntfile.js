@@ -34,13 +34,16 @@ function getPathFromHere (p) {
     return path.join(shelljs.pwd(), p);
 }
 
-var sourceFolder = './' + sourceStyleFolder + '/';
-var deploymentFolder = getPathFromHere('./deployment/web/' + deploymentStyleFolder);
+var sourceFolder = './' + sourceStyleFolder + '/',
+    sourceSassFolder = sourceFolder + 'sass/',
+    sourceCssFolder = sourceFolder + 'css/';
+
+var deploymentFolder = './deployment/web/' + deploymentStyleFolder,
+    deploymentCssFolder = deploymentFolder + '/css/';
 
 
 module.exports = function (grunt) {
     var pkg = grunt.file.readJSON("package.json");
-    grunt.verbose;
     grunt.initConfig({
         watch: {
             sass: {
@@ -59,15 +62,15 @@ module.exports = function (grunt) {
             }
         },
         sass: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'styles',
-                    src: ['*.scss'],
-                    dest: '../public',
-                    ext: '.css'
-                }]
-            },
+            // dev: {
+            //   options: {
+            //       style: 'expanded'
+            //     },
+            //     files: {
+            //       './theme/styles/css/custom/custom.css': './theme/styles/sass/custom/custom.scss',
+            //       './theme/styles/css/lib/lib.css': './theme/styles/sass/lib/lib.scss'
+            //     }
+            // },
             dev: {
                 options: {
                     style: 'expanded',
@@ -75,9 +78,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: sourceFolder,
-                    src: ['*.scss'],
-                    dest: sourceFolder,
+                    cwd: sourceSassFolder,
+                    src: ['**/*.scss'],
+                    dest: sourceCssFolder,
                     ext: '.css'
                 }]
             }
@@ -86,8 +89,8 @@ module.exports = function (grunt) {
             dev: {
                 files: [
                     {
-                        dest: deploymentFolder,
-                        cwd: sourceFolder,
+                        dest: deploymentCssFolder,
+                        cwd: sourceCssFolder,
                         src: ["**/*.css*"],
                         expand: true
                     }
@@ -107,7 +110,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-copy')
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
