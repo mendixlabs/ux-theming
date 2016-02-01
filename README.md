@@ -7,6 +7,7 @@ This Gruntfile makes it easier to develop Mendix themes, without the use of [Sco
 The following things need to be installed:
 * [Node.js](https://nodejs.org/en/)
 * [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass)
+* [Grunt client](http://gruntjs.com/getting-started) (you can install this after installing Node using ```npm install grunt-cli -g```
 
 ## Installation
 
@@ -46,6 +47,12 @@ Clean your project folder by deleting:
 * ```package.json```
 * ```Gruntfile.js```
 * ```node_modules``` folder
+
+## Development TODO (will be done in future release):
+
+* Make Compass optional
+* Make SASS optional
+* Grunt browsersync options
 
 ## License
 
