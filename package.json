@@ -1,0 +1,23 @@
+{
+  "name": "ux-theming",
+  "version": "1.0.0",
+  "description": "Make theming easier, using Grunt or Gulp",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JelteMX/ux-theming.git"
+  },
+  "author": "J.W. Lagendijk <jelte.lagendijk@mendix.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JelteMX/ux-theming/issues"
+  },
+  "homepage": "https://github.com/JelteMX/ux-theming#readme",
+  "devDependencies": {
+    "gulp-zip": "^3.2.0",
+    "ux-gulp-theming": "file:gulp"
+  }
+}

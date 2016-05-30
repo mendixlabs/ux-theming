@@ -1,2 +1,4 @@
 Grunt/node_modules
 Gulp/node_modules
+node_modules
+dist

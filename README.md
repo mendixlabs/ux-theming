@@ -9,10 +9,10 @@ The following things need to be installed:
 * [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass)
 
 If you want to use Grunt:
-* [Grunt client](http://gruntjs.com/getting-started) (you can install this after installing Node using ```npm install grunt-cli -g```
+* [Grunt client](http://gruntjs.com/getting-started) (you can install this after installing Node using ```npm install grunt-cli -g```)
 
 If you want to use Gulp:
-* [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```
+* [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```)
 
 ## Installation
 
