@@ -14,9 +14,12 @@ If you want to use Grunt:
 If you want to use Gulp:
 * [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```)
 
+Note:
+> We have provided both Grunt and Gulp, but we recommend you use the **Gulp version**. The reason for this is that Gulp works with pipes, which makes it extremely fast. In a few tests we did, Gulp performed the tasks in 150ms, while Grunt took 4 seconds. Yet, because there are people that use Grunt (and the first version of ux-theming only had a Gruntfile), we include this one as well.
+
 ## Installation
 
-1.) Download the latest release (ZIP-file) [here](https://github.com/JelteMX/ux-grunt-theming/releases). Do NOT download the source files, but choose Gulp.zip or Grunt.zip
+1.) Download the latest release (ZIP-file) [here](https://github.com/JelteMX/ux-grunt-theming/releases). **Do NOT download the source files, but choose Gulp.zip or Grunt.zip**
 
 2.) Unzip in your project root folder
 
@@ -30,13 +33,16 @@ If you want to use Gulp:
 
 Based on your choise between Gulp or Grunt, you have the following options:
 
-### Grunt
-Currently, the Gruntfile has two options:
-
 * **default**, run from commandline:
 
 ```bash
 grunt
+```
+
+or 
+
+```bash
+gulp
 ```
 
 * **dev**, run from commandline:
@@ -45,15 +51,17 @@ grunt
 grunt dev
 ```
 
-The **default** Grunt task will check your theme folder (check Gruntfile.js for the location) and will:
+or 
+
+```bash
+gulp dev
+```
+
+The **default** task will check your theme folder (check Gruntfile.js/Gulpfile.js for the location) and will:
 * copy changed .css files to your deployment folder
 * when there are changes detected in any ```.scss``` file, run sass and place them in the source folder (on which these files will be copied to deployment as well)
 
-The **dev** Grunt task will do the same as default, but it will start your browser through a [Browsersync](http://www.browsersync.io/docs/grunt/) proxy. Any changes that you make in the css files will be automatically injected in your browser. You do not have to manually refresh your browser.
-
-### Gulp
-
-**TBD**
+The **dev** task will do the same as default, but it will start your browser through a [Browsersync](http://www.browsersync.io/docs/grunt/) proxy. Any changes that you make in the css files will be automatically injected in your browser. You do not have to manually refresh your browser.
 
 ## Done theming?
 
@@ -61,12 +69,6 @@ Clean your project folder by deleting:
 * ```package.json```
 * ```Gruntfile.js``` or ```Gulpfile.js```
 * ```node_modules``` folder
-
-## Development TODO (will be done in future release):
-
-* Make Compass optional
-* Make SASS optional
-* Grunt browsersync options
 
 ## License
 
