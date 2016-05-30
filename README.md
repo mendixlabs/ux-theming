@@ -6,7 +6,7 @@ Make it easier to develop Mendix themes, without the use of [Scout](https://worl
 
 The following things need to be installed:
 * [Node.js](https://nodejs.org/en/)
-* [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass)
+* [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass) **<-- this is probably not necessary when using gulp-sass, will check this**
 
 If you want to use Grunt:
 * [Grunt client](http://gruntjs.com/getting-started) (you can install this after installing Node using ```npm install grunt-cli -g```)
