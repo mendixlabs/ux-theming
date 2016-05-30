@@ -1,7 +1,7 @@
 {
-  "name": "ux-gulp-theming",
+  "name": "mendix-ux-gulp-theming",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Gulpfile for UX to make theming a lot easier",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

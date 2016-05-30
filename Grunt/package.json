@@ -1,7 +1,7 @@
 {
-  "name": "ux-grunt-theming",
+  "name": "mendix-ux-grunt-theming",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Gruntfile for UX to make theming a lot easier",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
