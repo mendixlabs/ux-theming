@@ -6,7 +6,7 @@ Make it easier to develop Mendix themes, without the use of [Scout](https://worl
 
 The following things need to be installed:
 * [Node.js](https://nodejs.org/en/)
-* [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass) **<-- this is probably not necessary when using gulp-sass, will check this**
+* [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass) **<-- this is probably not necessary when using gulp-sass, we'll verify this later on**
 
 If you want to use Grunt:
 * [Grunt client](http://gruntjs.com/getting-started) (you can install this after installing Node using ```npm install grunt-cli -g```)
@@ -23,11 +23,13 @@ Note:
 
 2.) Unzip in your project root folder
 
-3.) Open a terminal and go to your project root folder
+3.) Open a terminal and go to your project root folder. 
 
-4.) Install modules using ```npm install```
+_If you do this on Windows and you encounter errors with installing the dependencies, open your CMD or Powershell as Administrator._
 
-(To be sure you do not include node dependencies in you team-project, make sure you add the ``node_modules`` folder to your SVN ignore)
+4.) Install dependencies using ```npm install```
+
+(**_If you use this for a Teamserver project, make sure you do not include node dependencies in you team-project: add the ``node_modules`` folder to your SVN ignore_**)
 
 ## Usage
 
@@ -36,13 +38,13 @@ Based on your choise between Gulp or Grunt, you have the following options:
 * **default**, run from commandline:
 
 ```bash
-grunt
+  grunt
 ```
 
-or 
+  or 
 
 ```bash
-gulp
+  gulp
 ```
 
 * **dev**, run from commandline:
@@ -63,12 +65,34 @@ The **default** task will check your theme folder (check Gruntfile.js/Gulpfile.j
 
 The **dev** task will do the same as default, but it will start your browser through a [Browsersync](http://www.browsersync.io/docs/grunt/) proxy. Any changes that you make in the css files will be automatically injected in your browser. You do not have to manually refresh your browser.
 
+## Modifying parameters
+
+There are a few parameters that you can change. Open your ``Gruntfile.js`` or ``Gulpfile.js``, you can change these values at the top:
+
+* ``sourceStyleFolder```
+* ``deploymentStyleFolder```
+* ``proxyAddress``
+
+Make sure ``proxyAddress`` is pointed to your local deployment.
+
+## Troubleshooting
+
+* **``npm install`` fails**<br /><br />
+  Make sure you have the package.json and Gruntfile.js/Gulpfile.js in your root folder. Also, if there are errors installing (this can happen when you install the Gulp version), make sure you have administrator rights. See point 3 at Installation.
+
+* **"I started the dev task, but my ``localhost:3000`` keeps loading"**<br /><br />
+  Have you pointed to the right local deployment address? Check the proxyAddress in your Gulp-/Gruntfile.js. This should correspond to the address of your local deployment.
+
 ## Done theming?
 
 Clean your project folder by deleting:
 * ```package.json```
 * ```Gruntfile.js``` or ```Gulpfile.js```
 * ```node_modules``` folder
+
+## TODO
+
+* Check if Sass & Compass are still necessary
 
 ## License
 
