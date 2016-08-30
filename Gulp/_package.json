@@ -1,7 +1,7 @@
 {
-  "name": "mendix-ux-gulp-theming",
+  "name": "ux-gulp-theming",
   "private": true,
-  "version": "1.2.0",
+  "version": "{{{ version }}}",
   "description": "Gulpfile for UX to make theming a lot easier",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,9 +13,10 @@
     "sass"
   ],
   "author": "J.W. Lagendijk <jelte.lagendijk@mendix.com>",
+  "repository":  "{{{ repository }}}",
   "license": "MIT",
   "dependencies": {
-    "browser-sync": "^2.12.10",
+    "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.1",
     "gulp-sourcemaps": "^1.6.0"

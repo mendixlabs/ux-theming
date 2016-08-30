@@ -1,0 +1,5 @@
+{
+  "localAddress": "localhost:8080",
+  "deploymentStyleFolder": "styles",
+  "sourceStyleFolder": "theme/styles"
+}
