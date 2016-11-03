@@ -33,30 +33,30 @@ _If you do this on Windows and you encounter errors with installing the dependen
 
 ## Usage
 
-Based on your choise between Gulp or Grunt, you have the following options:
+Based on your choice between Gulp or Grunt, you have the following options:
 
 * **default**, run from commandline:
-
-```bash
-  grunt
-```
-
-  or
 
 ```bash
   gulp
 ```
 
+  or
+
+```bash
+  grunt
+```
+
 * **dev**, run from commandline:
 
 ```bash
-grunt dev
+gulp dev
 ```
 
 or
 
 ```bash
-gulp dev
+grunt dev
 ```
 
 The **default** task will check your theme folder (check Gruntfile.js/Gulpfile.js for the location) and will:
