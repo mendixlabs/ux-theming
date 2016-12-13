@@ -8,11 +8,11 @@ The following things need to be installed:
 * [Node.js](https://nodejs.org/en/)
 * [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass) **<-- this is probably not necessary when using gulp-sass, we'll verify this later on**
 
+If you want to use Gulp (recommended):
+* [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```)
+
 If you want to use Grunt:
 * [Grunt client](http://gruntjs.com/getting-started) (you can install this after installing Node using ```npm install grunt-cli -g```)
-
-If you want to use Gulp:
-* [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```)
 
 Note:
 > We have provided both Grunt and Gulp, but we recommend you use the **Gulp version**. The reason for this is that Gulp works with pipes, which makes it extremely fast. In a few tests we did, Gulp performed the tasks in 150ms, while Grunt took 4 seconds. Yet, because there are people that use Grunt (and the first version of ux-theming only had a Gruntfile), we include this one as well.
@@ -33,30 +33,30 @@ _If you do this on Windows and you encounter errors with installing the dependen
 
 ## Usage
 
-Based on your choise between Gulp or Grunt, you have the following options:
+Based on your choice between Gulp or Grunt, you have the following options:
 
 * **default**, run from commandline:
-
-```bash
-  grunt
-```
-
-  or
 
 ```bash
   gulp
 ```
 
+  or
+
+```bash
+  grunt
+```
+
 * **dev**, run from commandline:
 
 ```bash
-grunt dev
+gulp dev
 ```
 
 or
 
 ```bash
-gulp dev
+grunt dev
 ```
 
 The **default** task will check your theme folder (check Gruntfile.js/Gulpfile.js for the location) and will:
