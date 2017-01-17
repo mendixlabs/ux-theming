@@ -2,17 +2,17 @@
 
 Make it easier to develop Mendix themes, without the use of [Scout](https://world.mendix.com/display/public/howto50/Create+a+custom+theme+with+the+Mendix+UI+Framework) or [Koala](https://world.mendix.com/display/public/howto50/Setup+Mendix+UI+Framework+with+Koala)
 
-## Prerequisites
+## Prerequisites (only need to do this once)
 
 The following things need to be installed:
 * [Node.js](https://nodejs.org/en/)
 * [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass) **<-- this is probably not necessary when using gulp-sass, we'll verify this later on**
 
+If you want to use Gulp (recommended):
+* [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```)
+
 If you want to use Grunt:
 * [Grunt client](http://gruntjs.com/getting-started) (you can install this after installing Node using ```npm install grunt-cli -g```)
-
-If you want to use Gulp:
-* [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```)
 
 Note:
 > We have provided both Grunt and Gulp, but we recommend you use the **Gulp version**. The reason for this is that Gulp works with pipes, which makes it extremely fast. In a few tests we did, Gulp performed the tasks in 150ms, while Grunt took 4 seconds. Yet, because there are people that use Grunt (and the first version of ux-theming only had a Gruntfile), we include this one as well.
@@ -23,7 +23,7 @@ Note:
 
 2.) Unzip in your project root folder
 
-3.) Open a terminal and go to your project root folder. 
+3.) Open a terminal and go to your project root folder.
 
 _If you do this on Windows and you encounter errors with installing the dependencies, open your CMD or Powershell as Administrator._
 
@@ -33,30 +33,30 @@ _If you do this on Windows and you encounter errors with installing the dependen
 
 ## Usage
 
-Based on your choise between Gulp or Grunt, you have the following options:
+Based on your choice between Gulp or Grunt, you have the following options:
 
 * **default**, run from commandline:
-
-```bash
-  grunt
-```
-
-  or 
 
 ```bash
   gulp
 ```
 
+  or
+
+```bash
+  grunt
+```
+
 * **dev**, run from commandline:
 
 ```bash
-grunt dev
+gulp dev
 ```
 
-or 
+or
 
 ```bash
-gulp dev
+grunt dev
 ```
 
 The **default** task will check your theme folder (check Gruntfile.js/Gulpfile.js for the location) and will:
@@ -96,4 +96,11 @@ Clean your project folder by deleting:
 
 ## License
 
-Apache License, Version 2.0, January 2004
+The MIT License (MIT)
+Copyright (c) 2016 Mendix
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

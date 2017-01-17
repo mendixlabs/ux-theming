@@ -1,32 +1,23 @@
+/*
+  Gruntfile.js for theming Mendix themes. Source: {{{ repository }}}, version {{{ version }}}
+*/
+
+/* jshint node:true */
 'use strict';
 
-
-/*
-    These variables may be changed
- */
-
 // What is the name of the style folder in this theme folder?
-var sourceStyleFolder = 'theme/styles';
+var sourceStyleFolder = '{{{ sourceStyleFolder }}}';
+
 // What is the name of the style folder in the deployment folder?
-var deploymentStyleFolder = 'styles';
+var deploymentStyleFolder = '{{{ deploymentStyleFolder }}}';
 
 // Browsersync feature, please specify the host & port of the running project (without http://)
-var proxyAddress = 'localhost:8080';
+var proxyAddress = '{{{ localAddress }}}';
 
 /*
-    Run this Gruntfile from your project folder as:
-
-    > grunt
-    (default configuration, watches for changes in sass files and copies changes in css files to deployment)
-
-    > grunt dev
-    (dev configuration, does the same as default, but opens a browser in browsersync modus)
-
-        *************************************************************************
-        * Don't try to edit below this line, unless you know what you are doing *
-        *************************************************************************
-                                                                                                                */
-
+  *************************************************************************
+  * Don't try to edit below this line, unless you know what you are doing *
+  *************************************************************************/
 var path = require('path'),
     shelljs = require('shelljs');
 
@@ -62,15 +53,6 @@ module.exports = function (grunt) {
             }
         },
         sass: {
-            // dev: {
-            //   options: {
-            //       style: 'expanded'
-            //     },
-            //     files: {
-            //       './theme/styles/css/custom/custom.css': './theme/styles/sass/custom/custom.scss',
-            //       './theme/styles/css/lib/lib.css': './theme/styles/sass/lib/lib.scss'
-            //     }
-            // },
             dev: {
                 options: {
                     style: 'expanded',

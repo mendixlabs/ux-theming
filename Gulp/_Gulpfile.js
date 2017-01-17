@@ -1,25 +1,23 @@
-/* global require*/
+/*
+  Gulpfile.js for theming Mendix themes. Source: {{{ repository }}}, version {{{ version }}}
+*/
+
+/* jshint node:true */
 'use strict';
 
-/*
-    These variables may be changed
- */
-
 // What is the name of the style folder in this theme folder?
-var sourceStyleFolder = 'theme/styles';
+var sourceStyleFolder = '{{{ sourceStyleFolder }}}';
 
 // What is the name of the style folder in the deployment folder?
-var deploymentStyleFolder = 'styles';
+var deploymentStyleFolder = '{{{ deploymentStyleFolder }}}';
 
 // Browsersync feature, please specify the host & port of the running project (without http://)
-var proxyAddress = 'localhost:8081';
+var proxyAddress = '{{{ localAddress }}}';
 
 /*
   *************************************************************************
   * Don't try to edit below this line, unless you know what you are doing *
-  *************************************************************************
-                                                                              */
-
+  *************************************************************************/
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync').create(),
@@ -77,9 +75,8 @@ gulp.task('watch:browsersync-sass', function () {
 });
 
 gulp.task('dev', ['browsersync-sass', 'watch:browsersync-sass'], function () {
-
   browserSync.init({
-    proxy: proxyAddress
+    proxy: proxyAddress,
+    online: false
   });
-
 });
