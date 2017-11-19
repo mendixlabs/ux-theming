@@ -5,7 +5,7 @@ Make it easier to develop Mendix themes, without the use of [Scout](https://worl
 ## Prerequisites (only need to do this once)
 
 The following things need to be installed:
-* [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, it currently only works with version 6.x.x**
+* [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, 8.x.x**
 * [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass) **<-- this is probably not necessary when using gulp-sass, we'll verify this later on**
 
 If you want to use Gulp (recommended):
