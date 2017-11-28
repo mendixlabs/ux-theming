@@ -1,12 +1,11 @@
 # Grunt/Gulp for Mendix theming
 
-Make it easier to develop Mendix themes, without the use of [Scout](https://world.mendix.com/display/public/howto50/Create+a+custom+theme+with+the+Mendix+UI+Framework) or [Koala](https://world.mendix.com/display/public/howto50/Setup+Mendix+UI+Framework+with+Koala)
+Make it easier to develop Mendix themes, without the use of [Scout](https://docs.mendix.com/howto/ux/create-a-custom-theme-with-the-mendix-ui-framework) or [Koala](https://docs.mendix.com/howto/ux/setup-mendix-ui-framework-with-koala)
 
 ## Prerequisites (only need to do this once)
 
 The following things need to be installed:
 * [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, 8.x.x**
-* [SASS & Compass](http://thesassway.com/beginner/getting-started-with-sass-and-compass) **<-- this is probably not necessary when using gulp-sass, we'll verify this later on**
 
 If you want to use Gulp (recommended):
 * [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```)
@@ -27,7 +26,7 @@ Note:
 
 _If you do this on Windows and you encounter errors with installing the dependencies, open your CMD or Powershell as Administrator._
 
-4.) Install dependencies using ```npm install```
+4.) Install dependencies using ``npm install``
 
 (**_If you use this for a Teamserver project, make sure you do not include node dependencies in you team-project: add the ``node_modules`` folder to your SVN ignore_**)
 
@@ -69,8 +68,8 @@ The **dev** task will do the same as default, but it will start your browser thr
 
 There are a few parameters that you can change. Open your ``Gruntfile.js`` or ``Gulpfile.js``, you can change these values at the top:
 
-* ``sourceStyleFolder```
-* ``deploymentStyleFolder```
+* ``sourceStyleFolder``
+* ``deploymentStyleFolder``
 * ``proxyAddress``
 
 Make sure ``proxyAddress`` is pointed to your local deployment.
@@ -92,12 +91,12 @@ Clean your project folder by deleting:
 
 ## TODO
 
-* Check if Sass & Compass are still necessary
+* ~~Check if Sass & Compass are still necessary~~ The later versions of node-sass will download their own binary, so you don't need to install Sass yourself.
 
 ## License
 
 The MIT License (MIT)
-Copyright (c) 2016 Mendix
+Copyright (c) 2017 Mendix
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
