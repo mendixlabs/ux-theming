@@ -5,9 +5,9 @@ Make it easier to develop Mendix themes, without the use of [Scout](https://docs
 ## Prerequisites (only need to do this once)
 
 The following things need to be installed:
-* [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, 8.x.x**
+* [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, 8.x.x. This is important!! It will fail on older versions like Node 6.x.x**
 
-If you want to use Gulp (recommended):
+If you want to use Gulp (**recommended**):
 * [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```)
 
 If you want to use Grunt:
@@ -76,27 +76,54 @@ Make sure ``proxyAddress`` is pointed to your local deployment.
 
 ## Troubleshooting
 
-* **``npm install`` fails**<br /><br />
-  Make sure you have the package.json and Gruntfile.js/Gulpfile.js in your root folder. Also, if there are errors installing (this can happen when you install the Gulp version), make sure you have administrator rights. See point 3 at Installation.
+#### **``npm install`` fails**<br /><br />
 
-* **"I started the dev task, but my ``localhost:3000`` keeps loading"**<br /><br />
-  Have you pointed to the right local deployment address? Check the proxyAddress in your Gulp-/Gruntfile.js. This should correspond to the address of your local deployment.
+Make sure you have the package.json and Gruntfile.js/Gulpfile.js in your root folder. Also, if there are errors installing (this can happen when you install the Gulp version), make sure you have administrator rights. See point 3 at Installation.
+
+#### **"I started the dev task, but my ``localhost:3000`` keeps loading"**<br /><br />
+
+Have you pointed to the right local deployment address? Check the proxyAddress in your Gulp-/Gruntfile.js. This should correspond to the address of your local deployment.
+
+#### **"I use the DEV task, but on reload it is missing styles"**<br /><br />
+
+This is a common problem when you are using this in new Mendix Projects where it is using Deeplinks (e.g. http://localhost:3000/link/page). The reason for this is that the paths to the styles are relative in your HTML. Please check the following:
+
+* Open the 'index.html' (or the one that is used, for example 'index2.html')
+* In the ``<head>`` section you will find the links to stylesheets:
+
+```html
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css?{{cachebust}}">
+  <link rel="stylesheet" href="mxclientsystem/mxui/ui/mxui.css?{{cachebust}}">
+  <link rel="stylesheet" href="css/custom.css?{{cachebust}}">
+  <link rel="stylesheet" href="css/custom/custom.css?{{cachebust}}">
+```
+
+* Make sure that any of these links to the stylesheets are prefixed with a ``/``, so it will always refer to the root:
+
+```html
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css?{{cachebust}}">
+  <link rel="stylesheet" href="/mxclientsystem/mxui/ui/mxui.css?{{cachebust}}">
+  <link rel="stylesheet" href="/css/custom.css?{{cachebust}}">
+  <link rel="stylesheet" href="/css/custom/custom.css?{{cachebust}}">
+```
+
+This should fix your problem with missing stylesheets after a reload
 
 ## Done theming?
 
-Clean your project folder by deleting:
+If you do not want the theming files to be part of the project (you can safely commit them, as long as you will add ``node_modules`` to **SVN Ignore**), you can clean your project folder by deleting:
 * ```package.json```
 * ```Gruntfile.js``` or ```Gulpfile.js```
 * ```node_modules``` folder
 
 ## TODO
 
-* ~~Check if Sass & Compass are still necessary~~ The later versions of node-sass will download their own binary, so you don't need to install Sass yourself.
+None
 
 ## License
 
 The MIT License (MIT)
-Copyright (c) 2017 Mendix
+Copyright (c) 2018 Mendix
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

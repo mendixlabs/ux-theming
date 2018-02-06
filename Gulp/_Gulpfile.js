@@ -40,6 +40,15 @@ gulp.task('build-sass', function () {
     .pipe(gulp.dest(deploymentCssFolder));
 });
 
+gulp.task('build', function () {
+  return gulp.src(sourceSassFolder + '**/*.scss')
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    .pipe(gulp.dest(sourceCssFolder))
+    .pipe(gulp.dest(deploymentCssFolder));
+});
+
 gulp.task('copy-css', function () {
   return gulp.src(sourceCssFolder + '**/*.css')
     .pipe(gulp.dest(deploymentCssFolder));
@@ -55,7 +64,6 @@ gulp.task('watch:css', function () {
 
 gulp.task('default', ['watch:sass']);
 gulp.task('css', ['watch:css']);
-gulp.task('build', ['build-sass']);
 
 // Browsersync
 gulp.task('browsersync-sass', function () {
@@ -76,8 +84,14 @@ gulp.task('watch:browsersync-sass', function () {
 
 gulp.task('dev', ['browsersync-sass', 'watch:browsersync-sass'], function () {
   browserSync.init({
-    proxy: proxyAddress,
-    online: false,
-    ws: true
+    proxy: {
+      target: proxyAddress,
+      ws: true
+    },
+    online: true,
+    open: true,
+    reloadOnRestart: true,
+    notify: true,
+    ghostMode: false
   });
 });

@@ -1,6 +1,6 @@
 {
   "name": "ux-theming",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "description": "Make theming easier, using Grunt or Gulp",
   "scripts": {
     "build": "node make",
