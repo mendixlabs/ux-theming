@@ -55,11 +55,11 @@ gulp.task('copy-css', function () {
 });
 
 gulp.task('watch:sass', function () {
-  gulp.watch(sourceSassFolder + '**/*.scss', ['build-sass']);
+  gulp.watch('**/*.scss', { cwd: sourceSassFolder }, ['build-sass']);
 });
 
 gulp.task('watch:css', function () {
-  gulp.watch(sourceCssFolder + '**/*.css', ['copy-css']);
+  gulp.watch('**/*.css', { cwd: sourceCssFolder }, ['copy-css']);
 });
 
 gulp.task('default', ['watch:sass']);
@@ -79,7 +79,7 @@ gulp.task('browsersync-sass', function () {
 });
 
 gulp.task('watch:browsersync-sass', function () {
-  gulp.watch(sourceSassFolder + '**/*.scss', ['browsersync-sass']);
+  gulp.watch('**/*.scss', { cwd: sourceSassFolder }, ['browsersync-sass']);
 });
 
 gulp.task('dev', ['browsersync-sass', 'watch:browsersync-sass'], function () {
