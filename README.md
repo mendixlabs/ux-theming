@@ -33,7 +33,7 @@ _If you do this on Windows and you encounter errors with installing the dependen
 ## Usage
 
 ### 1.6.0 and newer
-Per version 1.6.0 you can use the following tass using **npm** instead of **gulp**:
+Per version 1.6.0 you can use the following task using **npm** instead of **gulp**:
 
 * **default**
 
