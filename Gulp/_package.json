@@ -4,7 +4,8 @@
   "version": "{{{ version }}}",
   "description": "Gulpfile for UX to make theming a lot easier",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./node_modules/.bin/gulp",
+    "dev": "./node_modules/.bin/gulp dev"
   },
   "keywords": [
     "gulp",

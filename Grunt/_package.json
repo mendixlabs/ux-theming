@@ -2,7 +2,7 @@
   "name": "ux-grunt-theming",
   "private": true,
   "version": "{{{ version }}}",
-  "description": "Gruntfile for UX to make theming a lot easier",
+  "description": "Gruntfile for UX to make theming a lot easier (deprecated)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

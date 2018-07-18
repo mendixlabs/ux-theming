@@ -1,4 +1,4 @@
-# Grunt/Gulp for Mendix theming
+# Gulp for Mendix theming
 
 Make it easier to develop Mendix themes, without the use of [Scout](https://docs.mendix.com/howto/ux/create-a-custom-theme-with-the-mendix-ui-framework) or [Koala](https://docs.mendix.com/howto/ux/setup-mendix-ui-framework-with-koala)
 
@@ -8,7 +8,7 @@ The following things need to be installed:
 * [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, 8.x.x. This is important!! It will fail on older versions like Node 6.x.x**
 
 If you want to use Gulp (**recommended**):
-* [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```)
+* [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```). **Note: Per version 1.6.0 this is unnecessary, because you can run it using npm**
 
 If you want to use Grunt:
 * [Grunt client](http://gruntjs.com/getting-started) (you can install this after installing Node using ```npm install grunt-cli -g```)
@@ -18,7 +18,7 @@ Note:
 
 ## Installation
 
-1.) Download the latest release (ZIP-file) [here](https://github.com/JelteMX/ux-grunt-theming/releases). **Do NOT download the source files, but choose Gulp.zip or Grunt.zip**
+1.) Download the latest release (ZIP-file) [here](https://github.com/JelteMX/ux-grunt-theming/releases). **Do NOT download the source files, but choose Gulp.zip**
 
 2.) Unzip in your project root folder
 
@@ -31,6 +31,23 @@ _If you do this on Windows and you encounter errors with installing the dependen
 (**_If you use this for a Teamserver project, make sure you do not include node dependencies in you team-project: add the ``node_modules`` folder to your SVN ignore_**)
 
 ## Usage
+
+### 1.6.0 and newer
+Per version 1.6.0 you can use the following tass using **npm** instead of **gulp**:
+
+* **default**
+
+```bash
+  npm run start
+```
+
+* **dev**
+
+```bash
+  npm run dev
+```
+
+### 1.5.1 and older
 
 Based on your choice between Gulp or Grunt, you have the following options:
 
@@ -57,6 +74,8 @@ or
 ```bash
 grunt dev
 ```
+
+### Tasks:
 
 The **default** task will check your theme folder (check Gruntfile.js/Gulpfile.js for the location) and will:
 * copy changed .css files to your deployment folder
@@ -108,6 +127,12 @@ This is a common problem when you are using this in new Mendix Projects where it
 ```
 
 This should fix your problem with missing stylesheets after a reload
+
+#### **"I get the following error:"**
+
+> ``gulpInst.start.apply(gulpInst, toRun); TypeError: Cannot read property 'apply' of undefined``
+
+Your Gulp is outdated. Please run ``npm install gulp-cli -g`` again. Or use **npm**, see usage for 1.6.0 and newer.
 
 ## Done theming?
 

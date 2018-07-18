@@ -1,6 +1,6 @@
 {
   "name": "ux-theming",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Make theming easier, using Grunt or Gulp",
   "scripts": {
     "build": "node make",
@@ -16,8 +16,8 @@
   },
   "homepage": "https://github.com/mendix/ux-theming#readme",
   "devDependencies": {
-    "archiver": "^1.1.0",
-    "mustache": "^2.2.1",
-    "shelljs": "^0.7.4"
+    "archiver": "^2.1.1",
+    "mustache": "^2.3.0",
+    "shelljs": "^0.8.2"
   }
 }
