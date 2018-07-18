@@ -1,6 +1,6 @@
 # Gulp for Mendix theming
 
-Make it easier to develop Mendix themes, without the use of [Scout](https://docs.mendix.com/howto/ux/create-a-custom-theme-with-the-mendix-ui-framework) or [Koala](https://docs.mendix.com/howto/ux/setup-mendix-ui-framework-with-koala)
+Make it [easier to develop Mendix themes](https://docs.mendix.com/howto/ux/style-with-gulp-and-sass), without the use of [Scout](https://docs.mendix.com/howto/ux/create-a-custom-theme-with-the-mendix-ui-framework) or [Koala](https://docs.mendix.com/howto/ux/setup-mendix-ui-framework-with-koala)
 
 ## Prerequisites (only need to do this once)
 
