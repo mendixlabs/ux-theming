@@ -19,54 +19,54 @@ var proxyAddress = '{{{ localAddress }}}';
   * Don't try to edit below this line, unless you know what you are doing *
   *************************************************************************/
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    browserSync = require('browser-sync').create(),
-    path = require('path'),
-    sourcemaps = require('gulp-sourcemaps');
+  sass = require('gulp-sass'),
+  browserSync = require('browser-sync').create(),
+  path = require('path'),
+  sourcemaps = require('gulp-sourcemaps');
 
 var sourceFolder = './' + sourceStyleFolder + '/',
-    sourceSassFolder = sourceFolder + 'sass/',
-    sourceCssFolder = sourceFolder + 'css/';
+  sourceSassFolder = sourceFolder + 'sass/',
+  sourceCssFolder = sourceFolder + 'css/';
 
 var deploymentFolder = './deployment/web/' + deploymentStyleFolder,
-    deploymentCssFolder = deploymentFolder + '/css/';
+  deploymentCssFolder = deploymentFolder + '/css/';
 
-gulp.task('build-sass', function () {
+gulp.task('build-sass', gulp.series(function () {
   return gulp.src(sourceSassFolder + '**/*.scss')
     .pipe(sass({
       outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(gulp.dest(sourceCssFolder))
     .pipe(gulp.dest(deploymentCssFolder));
-});
+}));
 
-gulp.task('build', function () {
+gulp.task('build', gulp.series(function () {
   return gulp.src(sourceSassFolder + '**/*.scss')
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(gulp.dest(sourceCssFolder))
     .pipe(gulp.dest(deploymentCssFolder));
-});
+}));
 
-gulp.task('copy-css', function () {
+gulp.task('copy-css', gulp.series(function () {
   return gulp.src(sourceCssFolder + '**/*.css')
     .pipe(gulp.dest(deploymentCssFolder));
-});
+}));
 
-gulp.task('watch:sass', function () {
-  gulp.watch('**/*.scss', { cwd: sourceSassFolder }, ['build-sass']);
-});
+gulp.task('watch:sass', gulp.series(function () {
+  gulp.watch('**/*.scss', { cwd: sourceSassFolder }, gulp.series('build-sass'));
+}));
 
-gulp.task('watch:css', function () {
-  gulp.watch('**/*.css', { cwd: sourceCssFolder }, ['copy-css']);
-});
+gulp.task('watch:css', gulp.series(function () {
+  gulp.watch('**/*.css', { cwd: sourceCssFolder }, gulp.series('copy-css'));
+}));
 
-gulp.task('default', ['watch:sass']);
-gulp.task('css', ['watch:css']);
+gulp.task('default', gulp.series(['watch:sass']));
+gulp.task('css', gulp.series(['watch:css']));
 
 // Browsersync
-gulp.task('browsersync-sass', function () {
+gulp.task('browsersync-sass', gulp.series(function () {
   return gulp.src(sourceSassFolder + '**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -76,13 +76,13 @@ gulp.task('browsersync-sass', function () {
     .pipe(gulp.dest(sourceCssFolder))
     .pipe(gulp.dest(deploymentCssFolder))
     .pipe(browserSync.stream());
-});
+}));
 
-gulp.task('watch:browsersync-sass', function () {
-  gulp.watch('**/*.scss', { cwd: sourceSassFolder }, ['browsersync-sass']);
-});
+gulp.task('watch:browsersync-sass', gulp.series(function () {
+  gulp.watch('**/*.scss', { cwd: sourceSassFolder }, gulp.series('browsersync-sass'));
+}));
 
-gulp.task('dev', ['browsersync-sass', 'watch:browsersync-sass'], function () {
+gulp.task('dev', gulp.series(['browsersync-sass', 'watch:browsersync-sass'], function () {
   browserSync.init({
     proxy: {
       target: proxyAddress,
@@ -94,4 +94,4 @@ gulp.task('dev', ['browsersync-sass', 'watch:browsersync-sass'], function () {
     notify: true,
     ghostMode: false
   });
-});
+}));
