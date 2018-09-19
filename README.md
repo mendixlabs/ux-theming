@@ -83,6 +83,8 @@ The **default** task will check your theme folder (check Gruntfile.js/Gulpfile.j
 
 The **dev** task will do the same as default, but it will start your browser through a [Browsersync](http://www.browsersync.io/docs/grunt/) proxy. Any changes that you make in the css files will be automatically injected in your browser. You do not have to manually refresh your browser.
 
+The **build** task will build all the CSS, minifying everything. This is **important** to do before committing the styling in the project. If you will use the default/dev task, it will keep the source mapping in the CSS, resulting in a huge filesize.
+
 ## Modifying parameters
 
 There are a few parameters that you can change. Open your ``Gruntfile.js`` or ``Gulpfile.js``, you can change these values at the top:
