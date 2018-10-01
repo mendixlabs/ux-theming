@@ -130,6 +130,32 @@ This is a common problem when you are using this in new Mendix Projects where it
 
 This should fix your problem with missing stylesheets after a reload
 
+#### **"I use the DEV task, but on reload I don't see any changes in Mendix 7"**<br /><br />
+
+This happens when the pages have urls (e.g. `http://localhost:3000/p/page_name`) and the HTML page includes relative links to the CSS files.
+
+Mendix 7 uses a `settings.json` in the theme folder to determine which style files it needs to include. Most likely this looks like this:
+
+```json
+...
+    "cssFiles": [
+        "styles/css/lib/lib.css",
+        "styles/css/custom/custom.css"
+    ],
+...
+```
+
+The way to fix this issue is to add a slash in front of these files:
+
+```json
+...
+    "cssFiles": [
+        "/styles/css/lib/lib.css",
+        "/styles/css/custom/custom.css"
+    ],
+...
+```
+
 #### **"I get the following error:"**
 
 > ``gulpInst.start.apply(gulpInst, toRun); TypeError: Cannot read property 'apply' of undefined``
