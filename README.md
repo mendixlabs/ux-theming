@@ -97,15 +97,15 @@ Make sure ``proxyAddress`` is pointed to your local deployment.
 
 ## Troubleshooting
 
-#### **``npm install`` fails**<br /><br />
+> **``npm install`` fails**
 
 Make sure you have the package.json and Gruntfile.js/Gulpfile.js in your root folder. Also, if there are errors installing (this can happen when you install the Gulp version), make sure you have administrator rights. See point 3 at Installation.
 
-#### **"I started the dev task, but my ``localhost:3000`` keeps loading"**<br /><br />
+> **"I started the dev task, but my ``localhost:3000`` keeps loading"**
 
 Have you pointed to the right local deployment address? Check the proxyAddress in your Gulp-/Gruntfile.js. This should correspond to the address of your local deployment.
 
-#### **"I use the DEV task, but on reload it is missing styles"**<br /><br />
+> **"I use the DEV task, but on reload it is missing styles"**
 
 This is a common problem when you are using this in new Mendix Projects where it is using Deeplinks (e.g. http://localhost:3000/link/page). The reason for this is that the paths to the styles are relative in your HTML. Please check the following:
 
@@ -130,7 +130,7 @@ This is a common problem when you are using this in new Mendix Projects where it
 
 This should fix your problem with missing stylesheets after a reload
 
-#### **"I use the DEV task, but on reload I don't see any changes in Mendix 7"**<br /><br />
+> **"I use the DEV task, but on reload I don't see any changes in Mendix 7"**
 
 This happens when the pages have urls (e.g. `http://localhost:3000/p/page_name`) and the HTML page includes relative links to the CSS files.
 
@@ -156,9 +156,9 @@ The way to fix this issue is to add a slash in front of these files:
 ...
 ```
 
-#### **"I get the following error:"**
+> **"I get the following error:"**
 
-> ``gulpInst.start.apply(gulpInst, toRun); TypeError: Cannot read property 'apply' of undefined``
+``gulpInst.start.apply(gulpInst, toRun); TypeError: Cannot read property 'apply' of undefined``
 
 Your Gulp is outdated. Please run ``npm install gulp-cli -g`` again. Or use **npm**, see usage for 1.6.0 and newer.
 
