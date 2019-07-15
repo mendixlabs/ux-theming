@@ -7,7 +7,7 @@ Make it [easier to develop Mendix themes](https://docs.mendix.com/howto/ux/style
 ## Prerequisites (only need to do this once)
 
 The following things need to be installed:
-* [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, 8.x.x. This is important!! It will fail on older versions like Node 6.x.x**
+* [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, 10.x.x. This is important!! It will fail on older versions like Node 6.x.x. Version 8 might still work, but is not supported by Node anymore**
 
 If you want to use Gulp (**recommended**):
 * [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```). **Note: Per version 1.6.0 this is unnecessary, because you can run it using npm**
