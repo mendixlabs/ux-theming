@@ -166,7 +166,21 @@ Your Gulp is outdated. Please run ``npm install gulp-cli -g`` again. Or use **np
 
 ### Mendix 8 caveats
 
-When usinng UX-theming in Mendix 8, some issues might occur with an infinite loop or folders not being recognized. We're still investigating this, but it looks like some issues with SVN and possible rewriting Gulpfile.js. A few things to try:
+When using UX-theming in Mendix 8, some issues might occur with an infinite loop or folders not being recognized. 
+
+Most likely scenario is that the theme folder has changes. The new Mendix 8 structure (since Beta 3) has a distinct folder for web and for native. Make sure you set the following folders correctly in your Gulpfile:
+
+```js
+// What is the name of the style folder in this theme folder?
+var sourceStyleFolder = 'theme/styles/web';
+
+// What is the name of the style folder in the deployment folder?
+var deploymentStyleFolder = 'styles/web';
+```
+
+This should fix most of the issues. If not, keep on reading.
+
+Other issues might occur with SVN and possible rewriting Gulpfile.js. A few things to try:
 
 - Remove node_modules, package.json, package-lock.json and Gulpfile.js. Replace them with a fresh copy downloaded here
 - Not only ignore node_modules, but also Gulpfile.js. This means you will have to add the Gulpfile to the project if you download it again or someone in your team is working on it
