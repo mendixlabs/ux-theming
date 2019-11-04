@@ -1,5 +1,7 @@
 # Gulp for Mendix theming
 
+> **Note: With Mendix 8, we decided to go with a different tool: [Calypso](https://docs.mendix.com/howto/front-end/calypso). That is the officially supported tool. It will still be possible to do styling using ux-theming, but it is not officially supported. If you encounter problems using Gulp, please move to Calypso.**
+
 Make it [easier to develop Mendix themes](https://docs.mendix.com/howto/ux/style-with-gulp-and-sass), without the use of [Scout](https://docs.mendix.com/howto/ux/create-a-custom-theme-with-the-mendix-ui-framework) or [Koala](https://docs.mendix.com/howto/ux/setup-mendix-ui-framework-with-koala)
 
 [Using this with Mendix 8? Please read this](#mendix-8-caveats)
