@@ -5,7 +5,8 @@
   "description": "Gulpfile for UX to make theming a lot easier",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
-    "dev": "./node_modules/.bin/gulp dev"
+    "dev": "./node_modules/.bin/gulp dev",
+    "build": "./node_modules/.bin/gulp build"
   },
   "keywords": [
     "gulp",
