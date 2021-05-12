@@ -1,6 +1,6 @@
 # Gulp for Mendix theming
 
-> **Note: With Mendix 8, we decided to go with a different tool: [Calypso](https://docs.mendix.com/howto/front-end/calypso). That is the officially supported tool. It will still be possible to do styling using ux-theming, but it is not officially supported. If you encounter problems using Gulp, please move to Calypso.**
+> **Note: With Mendix 8, we decided to go with a different tool: [Calypso](https://docs.mendix.com/howto/front-end/calypso). That is the officially supported tool. It will still be possible to do styling using ux-theming, but _it is not officially supported_. If you encounter problems using Gulp, please move to Calypso.**
 
 Make it [easier to develop Mendix themes](https://docs.mendix.com/howto/ux/style-with-gulp-and-sass), without the use of [Scout](https://docs.mendix.com/howto/ux/create-a-custom-theme-with-the-mendix-ui-framework) or [Koala](https://docs.mendix.com/howto/ux/setup-mendix-ui-framework-with-koala)
 
@@ -9,18 +9,15 @@ Make it [easier to develop Mendix themes](https://docs.mendix.com/howto/ux/style
 ## Prerequisites (only need to do this once)
 
 The following things need to be installed:
-* [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, 10.x.x. This is important!! It will fail on older versions like Node 6.x.x. Version 8 might still work, but is not supported by Node anymore**
+* [Node.js](https://nodejs.org/en/) **Please ensure you install the LTS version, 14.x.x. This is important!! It will fail on older versions*
 
-If you want to use Gulp (**recommended**):
-* [Gulp client](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (you can install this after installing Node using ```npm install gulp-cli -g```). **Note: Per version 1.6.0 this is unnecessary, because you can run it using npm**
+For Windows it is *recommended* to install Node.js through `nvm-windows`, in order to avoid issues with acces rights. You can find a [Microsoft install guide here](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows#install-nvm-windows-nodejs-and-npm)
 
-If you want to use Grunt:
-* [Grunt client](http://gruntjs.com/getting-started) (you can install this after installing Node using ```npm install grunt-cli -g```)
+## Installation (automated)
 
-Note:
-> We have provided both Grunt and Gulp, but we recommend you use the **Gulp version**. The reason for this is that Gulp works with pipes, which makes it extremely fast. In a few tests we did, Gulp performed the tasks in 150ms, while Grunt took 4 seconds. Yet, because there are people that use Grunt (and the first version of ux-theming only had a Gruntfile), we include this one as well.
+Run `npx install-ux-theming` in your project folder (terminal like CMD or Powershell)
 
-## Installation
+## Installation (Manual)
 
 1.) Download the latest release (ZIP-file) [here](https://github.com/JelteMX/ux-grunt-theming/releases). **Do NOT download the source files, but choose Gulp.zip**
 
@@ -28,7 +25,7 @@ Note:
 
 3.) Open a terminal and go to your project root folder.
 
-_If you do this on Windows and you encounter errors with installing the dependencies, open your CMD or Powershell as Administrator._
+_If you do this on Windows and you encounter errors with installing the dependencies, open your CMD or Powershell as Administrator. This shouldn't happen if you installed Node.JS through NVM-Windows, see above_
 
 4.) Install dependencies using ``npm install``
 
@@ -36,10 +33,9 @@ _If you do this on Windows and you encounter errors with installing the dependen
 
 ## Usage
 
-### 1.6.0 and newer
-Per version 1.6.0 you can use the following task using **npm** instead of **gulp**:
-
 * **default**
+
+Will compile your sass everytime you make a change
 
 ```bash
   npm run start
@@ -47,36 +43,18 @@ Per version 1.6.0 you can use the following task using **npm** instead of **gulp
 
 * **dev**
 
+Will run browsersync and watch your files
+
 ```bash
   npm run dev
 ```
 
-### 1.5.1 and older
+* **build**
 
-Based on your choice between Gulp or Grunt, you have the following options:
-
-* **default**, run from commandline:
+Builds a minified version of the CSS
 
 ```bash
-  gulp
-```
-
-  or
-
-```bash
-  grunt
-```
-
-* **dev**, run from commandline:
-
-```bash
-gulp dev
-```
-
-or
-
-```bash
-grunt dev
+  npm run build
 ```
 
 ### Tasks:
@@ -204,7 +182,7 @@ None
 ## License
 
 The MIT License (MIT)
-Copyright (c) 2019 Mendix
+Copyright (c) 2021 Mendix
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
