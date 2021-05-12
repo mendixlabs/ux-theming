@@ -18,9 +18,9 @@
   "repository":  "{{{ repository }}}",
   "license": "MIT",
   "dependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0"
   }
 }

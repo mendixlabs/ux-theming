@@ -1,20 +1,19 @@
 {
   "name": "ux-theming",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Make theming easier, using Grunt or Gulp",
   "scripts": {
     "build": "node make",
-    "build-gulp": "node make gulp",
-    "build-grunt": "node make grunt"
+    "build-gulp": "node make gulp"
   },
   "private": true,
-  "repository": "https://github.com/mendix/ux-theming.git",
+  "repository": "https://github.com/mendixlabs/ux-theming.git",
   "author": "J.W. Lagendijk <jelte.lagendijk@mendix.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mendix/ux-theming/issues"
+    "url": "https://github.com/mendixlabs/ux-theming/issues"
   },
-  "homepage": "https://github.com/mendix/ux-theming#readme",
+  "homepage": "https://github.com/mendixlabs/ux-theming#readme",
   "devDependencies": {
     "archiver": "^2.1.1",
     "mustache": "^2.3.0",

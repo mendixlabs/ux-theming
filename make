@@ -12,20 +12,12 @@ config.repository = pkg.repository;
 
 target.all = function() {
     target.gulp();
-    target.grunt();
 };
 
 target.gulp = function() {
     createPackage("Gulp")
         .append(runMustache("Gulp/_Gulpfile.js", config), { name: "Gulpfile.js" })
         .append(runMustache("Gulp/_package.json", config), { name: "package.json" })
-        .finalize();
-};
-
-target.grunt = function() {
-    createPackage("Grunt")
-        .append(runMustache("Grunt/_Gruntfile.js", config), { name: "Gruntfile.js" })
-        .append(runMustache("Grunt/_package.json", config), { name: "package.json" })
         .finalize();
 };
 
