@@ -17,6 +17,6 @@
   "devDependencies": {
     "archiver": "^2.1.1",
     "mustache": "^2.3.0",
-    "shelljs": "^0.8.2"
+    "shelljs": "^0.8.5"
   }
 }
